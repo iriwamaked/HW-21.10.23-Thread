@@ -1,0 +1,71 @@
+﻿<Window x:Class="HW_21._10._23_Thread.Task1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW_21._10._23_Thread"
+        mc:Ignorable="d"
+        Title="Генерація простих чисел" Height="450" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0">
+            <TextBlock  Margin="5" TextWrapping="Wrap" >
+        Введіть два числа для діапазону простих чисел, в межах якого буде здійснюватися генерація:
+            </TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition  Width="*"/>
+                    <ColumnDefinition  Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label>1:</Label>
+                <TextBox Name="FirstNum" Grid.Column="1"></TextBox>
+                <Label Grid.Column="2">2:</Label>
+                <TextBox Name ="SecondNum" Grid.Column="3" Margin="0,0,5,0"></TextBox>
+            </Grid>
+            
+
+            <!--<ListView Name="ListViewForGeneratedNums">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="Згенеровані числа" DisplayMemberBinding="{Binding}" />
+            </GridView>
+        </ListView.View>
+    </ListView>-->
+            <Label>Згенеровані числа:</Label>
+            <TextBlock Name="TextBlockForGeneratedNums" TextWrapping="Wrap" Height="100">
+
+            </TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Margin="5" Click="StartButton_Click">Start</Button>
+                <Button Margin="5" Grid.Column="1" Click="StopButton_Click">Stop</Button>
+                <!--<Button></Button>-->
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            
+            <Label>Згенеровані числа Фібоначчі:</Label>
+            <ScrollViewer Height="150" VerticalScrollBarVisibility="Visible">
+            <TextBox Name="TextBlockFibonachi" TextWrapping="Wrap" Height="150">
+                </TextBox>
+            </ScrollViewer>
+            <Button Click="FibonachiStartButton">Start</Button>
+            <Button Click="StopButton_Click">Stop</Button>
+            <Button Click="FibonacciPauseButton_Click">Pause</Button>
+            
+        </StackPanel>
+    </Grid>
+</Window>
